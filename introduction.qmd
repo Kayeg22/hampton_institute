@@ -1,9 +1,8 @@
 ---
 title: "Hampton Normal and Agricultural Institute and the Indian Program"
 editor: visual
-editor_options:
-    chunk_output_type: console
 ---
+
 
 # Background of the Hampton Institute's "Indian Program"
 
@@ -19,9 +18,10 @@ There were Indigenous students from over 65 different nations at Hampton Institu
 
 It is important to note that the Lakota cared for the land in what is now Wyoming, Nebraska, North and South Dakota, and Montana. However, in 1876, the Black Hills were taken by the Federal government, forcing the Lakota onto limited reservations in South Dakota and Northern North Dakota. *Data for students can be located in footnote \^\[3\]. Any data that is misrepresented or inaccurate is not intentional.*
 
-General Area of Residence at Time of Collection
 
-(hampton_loc_fin_png.png)
+
+## Indigenous Girls and Young Women at Hampton Institute 
+
 
 
 ###References

@@ -113,6 +113,5 @@ install.packages("png")
 ```
 ```{r}
 library(png)
-
 ```
 
