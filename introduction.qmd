@@ -1,9 +1,31 @@
 ---
-title: "About"
+title: "Hampton Normal and Agricultural Institute and the Indian Program"
+editor: visual
+editor_options:
+    chunk_output_type: console
 ---
 
-About this site
+# Background of the Hampton Institute's "Indian Program"
+
+In 1878, the Hampton Normal and Agricultural Institute began its' program with seventeen Indigenous men. Those brought to Hampton were "chiefly Kiowas and Cheyennes," who had been held as prisoners of war in Fort Marion, Florida, by Captain Richard Henry Pratt in the aftermath of the Red River War of 1874-75.\^\[1\]
+
+Later the same year, Secretary of the Interior Carl Schurz requested that the Institute "collect" fifty Indigenous children from "Sioux" territory. Part of this area is now known as Wisconsin and Minnesota.\^\[2\] These children arrived in November and thus began the "Indian Program."
+
+The Program itself lasted until 1923, only a year before the destructive and eugenicist Virginia Racial Integrity Act. The location of the Hampton Institute and structure of its' Program is only one testament to the Commonwealth of Virginia and the Federal Government's goals of assimilation and cultural destruction.
+
+## Indigenous Students at Hampton Institute
+
+There were Indigenous students from over 65 different nations at Hampton Institute. The largest population of students affiliated themselves with the Oneida, Lakota, Dakota, and Eastern Band Cherokee. As stated on other parts of this website, Indigenous cultures did not organize space or their world in the same way that Europeans did. However, as the ones in positions of power, white settlers carved out these states to suit their own needs, disregarding traditional knowledge surrounding the land itself.
+
+It is important to note that the Lakota cared for the land in what is now Wyoming, Nebraska, North and South Dakota, and Montana. However, in 1876, the Black Hills were taken by the Federal government, forcing the Lakota onto limited reservations in South Dakota and Northern North Dakota. *Data for students can be located in footnote \^\[3\]. Any data that is misrepresented or innaccurate is not intentional.*
 
 ```{r}
-1 + 1
+
+
 ```
+
+
+
+###References
+
+\[1\] Ludlow, Helen W. *Ten Years' Work for Indians at the Hampton Normal and Agricultural Institute, at Hampton, Virginia. Hampton: Hampton Institute Press, 1888. pg 10. \[2\] Ludlow, pg 10.
