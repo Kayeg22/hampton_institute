@@ -108,5 +108,11 @@ st_distance(places_proj)
 
 ```
 
+```{r}
+install.packages("png")
+```
+```{r}
+library(png)
 
+```
 
