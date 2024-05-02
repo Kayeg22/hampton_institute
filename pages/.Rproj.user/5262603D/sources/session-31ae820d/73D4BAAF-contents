@@ -1,0 +1,117 @@
+
+
+```{r}
+#| eval: false
+install.packages("sf")
+install.packages("rnaturalearth")
+install.packages("tidygeocoder")
+```
+
+```{r}
+library(sf)
+library(tidyverse)
+library(rnaturalearth)
+library(tidygeocoder)
+```
+
+```{r}
+states <- ne_download(type = "states")
+
+states
+
+plot(st_geometry(states))
+
+glimpse(states)
+
+states <- states |>
+  filter(name !="Hawaii", name !="Alaska", name != "Idaho", name !="Washington", name !="Arizona", 
+         name != "California", name != "Colorado", name !="Nevada", name !="New Mexico", name !="Utah",
+         name !="Texas", name !="Arkansas", name !="Kansas", name !="Mississippi", name !="Virginia", 
+         name != "Oregon", name !="Missouri", name != "Louisiana", name !="Massachusetts",
+         name != "New Hampshire", name !="Vermont", name !="Alabama", name !="Florida", 
+         name !="Georgia", name !="South Carolina", name !="Ohio", 
+         name !="Tennessee", name !="West Virginia", name !="Delaware", name !="District of Columbia", 
+         name !="Maryland", name !="New Jersey", name !="New York", name !="Iowa", name !="Connecticut",
+         name !="Rhode Island", name !="Michigan", name !="Pennsylvania", name !="Maine", 
+         name !="Illinois", name !="Kentucky", name !="Indiana", name !="Oklahoma") |>
+  select(name)
+
+glimpse(states)
+
+plot(st_geometry(states))
+```
+
+```{r}
+plot(states, graticule = TRUE, axes = TRUE)
+
+ggplot(data = states) +
+  geom_sf(aes(fill = name)) +
+  guides(fill = "none") +
+  theme_minimal()
+
+ggplot(data = states) + 
+  geom_sf(aes(fill = name)) +
+  guides(fill = "none") +
+  coord_sf(datum= NA) +
+  theme_classic()
+
+```
+```{r}
+places <- c("Helena", "Pierre", "Bismarck", "Madison", "Saint Paul", "Raleigh", "Cheyenne", "Lincoln")
+
+places_geo <- geo(places)
+
+places_sf <- st_as_sf(places_geo, 
+                      coords = c("long", "lat"), 
+                      crs =4326 )
+places_sf
+```
+
+```{r}
+ggplot() +
+  geom_sf(data = states, aes(fill= name)) +
+  guides(fill = "none") +
+  geom_sf(data = places_sf) +
+  theme_classic()
+
+ggplot() +
+  geom_sf(data = states, aes(fill = name)) +
+  guides(fill = "none") +
+  geom_sf(data = places_sf, size = 0.2) +
+  geom_sf_text(data = places_sf, aes(label = address)) +
+  theme_classic()
+```
+
+```{r}
+states_proj <- st_transform(states, crs = "ESRI:102004")
+places_proj <- st_transform(places_sf, crs = "ESRI:102004")
+places_proj
+
+ggplot() +
+  geom_sf(data = states_proj ,aes(fill = name))+
+  guides(fill = "none") +
+  geom_sf(data = places_proj, size = 0.4) +
+  geom_sf_text(data = places_proj, aes(label = address)) +
+  coord_sf(datum = st_crs("ESRI:102004")) +
+  theme_classic()
+
+ggplot() +
+  geom_sf(data = states_proj, aes(fill = name)) +
+  guides(fill = "none") +
+  geom_sf(data = places_proj, size = 0.4) +
+  geom_sf_text(data = places_proj, aes(label = address), nudge_y = 70000) +
+  theme_classic()
+
+st_distance(places_sf)
+
+st_distance(places_proj)
+
+```
+
+```{r}
+install.packages("png")
+```
+```{r}
+library(png)
+```
+
