@@ -1,0 +1,77 @@
+---
+title: "Hampton Normal and Agricultural Institute and the Indian Program"
+editor: visual
+editor_options:
+    chunk_output_type: console
+---
+
+
+### Apt Students in "Civilization"
+
+## Indigenous Girls at Hampton Institute
+
+There were Indigenous students from over 65 different nations at Hampton Institute. The largest population of students affiliated themselves with the Oneida, Lakota, Dakota, and Eastern Band Cherokee. While this is nowhere near an exhaustive list, I have created a map below of these peoples' general ancestral lands.
+
+As stated on other parts of this website, Indigenous cultures did not organize space or their world in the same way that Europeans did. However, as the ones in positions of power, white settlers carved out these states to suit their own needs, disregarding traditional knowledge surrounding the land itself.
+
+## Where Were Most Female students From?
+
+```{r}
+#| eval: false
+install.packages("sf")
+install.packages("rnaturalearth")
+install.packages("tidygeocoder")
+```
+
+```{r}
+library(sf)
+library(tidyverse)
+library(rnaturalearth)
+library(tidygeocoder)
+```
+
+```{r}
+states <- ne_download(type = "states")
+
+states
+
+plot(st_geometry(states))
+
+glimpse(states)
+
+states <- states |>
+  filter(name !="Hawaii", name !="Alaska", name != "Idaho", name !="Washington", name !="Arizona", 
+         name != "California", name != "Colorado", name !="Nevada", name !="New Mexico", name !="Utah",
+         name !="Texas", name !="Arkansas", name !="Kansas", name !="Mississippi", name !="Virginia", 
+         name != "Oregon", name !="Missouri", name != "Louisiana", name !="Massachusetts",
+         name != "New Hampshire", name !="Vermont", name !="Alabama", name !="Florida", 
+         name !="Georgia", name !="South Carolina", name !="Ohio", 
+         name !="Tennessee", name !="West Virginia", name !="Delaware", name !="District of Columbia", 
+         name !="Maryland", name !="New Jersey", name !="New York", name !="Iowa", name !="Connecticut",
+         name !="Rhode Island", name !="Michigan", name !="Pennsylvania", name !="Maine", 
+         name !="Illinois", name !="Kentucky", name !="Indiana", name !="Oklahoma") |>
+  select(name)
+
+glimpse(states)
+
+plot(st_geometry(states))
+```
+
+```{r}
+plot(states, graticule = TRUE, axes = TRUE)
+
+ggplot(data = states) +
+  geom_sf(aes(fill = name)) +
+  guides(fill = "none") +
+  theme_minimal()
+
+ggplot(data = states) + 
+  geom_sf(aes(fill = name)) +
+  guides(fill = "none") +
+  coord_sf(datum= NA) +
+  theme_minimal()
+```
+
+```{r}
+
+```
